@@ -1,0 +1,8 @@
+rootProject.name='DexGradle'
+include ':dex.gradle'
+
+def isJitpackEnv = Boolean.parseBoolean(System.getenv("JITPACK"))
+if (!isJitpackEnv) {
+    include ':sample-lib'
+    include ':sample-app'
+}
